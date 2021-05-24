@@ -1,0 +1,11 @@
+{
+  "name": "skycore",
+  "version": "0.0.1",
+  "description": "SKYCORE - CPDLC and PDC simulation for flight simulation for use on the VATSIM network",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dale Brooksby and Ryan Alderton",
+  "license": "ISC"
+}
