@@ -1,11 +1,12 @@
 const express = require('express');
-
-const app = express();
 const http = require('http');
 const cors = require('cors');
 const { Server } = require('socket.io');
+const mongoose = require('mongoose');
 const config = require('../config');
+const dbConfig = require('../dbConfig');
 
+const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
@@ -28,4 +29,15 @@ io.on('connection', (socket) => {
 
 server.listen(config.default_port, () => {
   console.log(`Listening on ${config.default_port}`);
+});
+
+mongoose.connect(dbConfig.DB_CONNECTION, {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+}).then(() => {
+  console.log('Successfully connected to MognoDB');
+}).catch((error) => {
+  console.log(`MongoDB connection Error ${error}`);
 });
