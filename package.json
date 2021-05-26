@@ -4,6 +4,7 @@
   "description": "SKYCORE - CPDLC and PDC simulation for flight simulation for use on the VATSIM network",
   "main": "src/app.js",
   "scripts": {
+    "start": "nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dale Brooksby and Ryan Alderton",
@@ -16,6 +17,8 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "random-key": "^0.3.2",
     "socket.io": "^4.1.2"
   }
 }
