@@ -5,6 +5,10 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  vatsimCID: {
+    type: Number,
+    required: true,
+  },
   key: {
     type: String,
     required: true,
