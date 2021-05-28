@@ -3,6 +3,7 @@ const http = require('http');
 const cors = require('cors');
 const { Server } = require('socket.io');
 const mongoose = require('mongoose');
+const vatsimAPI = require('./methods/vatsim-api');
 const config = require('../config');
 const dbConfig = require('../dbConfig');
 
@@ -41,3 +42,9 @@ mongoose.connect(dbConfig.DB_CONNECTION, {
 }).catch((error) => {
   console.log(`MongoDB connection Error ${error}`);
 });
+
+// vatsimAPI.getVatsimPilots().then((data) => {
+//   console.log(data);
+// }).catch((error) => {
+//   console.log(error);
+// });

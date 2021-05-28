@@ -18,12 +18,6 @@ async function getVatsimPilots() {
   return getVatsimData().then((data) => data.pilots);
 }
 
-// getVatsimPilots().then((data) => {
-//   console.log(data);
-// }).catch((error) => {
-//   console.log(error);
-// });
-
 /**
  * Get all controllers currently connected to the VATSIM network
  * @returns Controllers connected to VATSIM
@@ -31,3 +25,17 @@ async function getVatsimPilots() {
 async function getVatsimControllers() {
   return getVatsimData().then((data) => data.controllers);
 }
+
+async function getPilotByCID(cid) {
+  return getVatsimPilots().then((data) => {
+    data.forEach();
+  });
+}
+
+getPilotByCID();
+
+module.exports = {
+  getVatsimData,
+  getVatsimPilots,
+  getVatsimControllers,
+};
