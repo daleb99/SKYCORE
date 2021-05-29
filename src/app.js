@@ -3,6 +3,7 @@ const http = require('http');
 const cors = require('cors');
 const { Server } = require('socket.io');
 const mongoose = require('mongoose');
+const vatsimAPI = require('./methods/vatsim-api');
 const config = require('../config');
 const dbConfig = require('../dbConfig');
 

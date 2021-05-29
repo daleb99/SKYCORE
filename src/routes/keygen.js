@@ -32,6 +32,7 @@ router.post('/', async (req, res) => {
 
     const userToAdd = new User({
       email: req.body.email,
+      vatsimCID: req.body.vatsimCID,
       key,
       keyCreatedAt: new Date(),
     });
