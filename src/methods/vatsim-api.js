@@ -26,16 +26,25 @@ async function getVatsimControllers() {
   return getVatsimData().then((data) => data.controllers);
 }
 
+/**
+ * Search for a pilot on VATSIM by CID
+ * @returns Object of requested user
+ * @param cid The VATSIM CID of the pilot to search for
+ */
 async function getPilotByCID(cid) {
-  return getVatsimPilots().then((data) => {
-    data.forEach();
+  const pilots = await getVatsimPilots();
+  let pilotToReturn = null;
+  pilots.forEach((pilot) => {
+    if (pilot.cid === cid) {
+      pilotToReturn = pilot;
+    }
   });
+  return pilotToReturn;
 }
-
-getPilotByCID();
 
 module.exports = {
   getVatsimData,
   getVatsimPilots,
   getVatsimControllers,
+  getPilotByCID,
 };
