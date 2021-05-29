@@ -42,9 +42,3 @@ mongoose.connect(dbConfig.DB_CONNECTION, {
 }).catch((error) => {
   console.log(`MongoDB connection Error ${error}`);
 });
-
-// vatsimAPI.getVatsimPilots().then((data) => {
-//   console.log(data);
-// }).catch((error) => {
-//   console.log(error);
-// });
