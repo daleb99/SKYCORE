@@ -20,18 +20,32 @@ function findFIR(lat, long) {
   const files = getFiles();
   console.log(`Lat: ${lat}, long: ${long}`);
 
-  files.forEach((sector) => {
+  const sectors = [];
+
+  files.forEach((file) => {
     // eslint-disable-next-line global-require
-    const sectorFile = require(sector.path);
-    const sectorName = sector.name.replace('.json', '');
+    const sectorFile = require(file.path);
+    const sectorName = file.name.replace('.json', '');
     const point = turf.point([long, lat]);
-    const poly = turf.polygon(sectorFile.features[0].geometry.coordinates[0]);
+    const poly = turf.polygon([sectorFile.features[0].geometry.coordinates]);
     const acInFIR = turf.booleanPointInPolygon(point, poly);
+
+    if (acInFIR) {
+      sectors.push(`${sectorName}`);
+    }
 
     console.log(`${sectorName}: ${acInFIR}`);
   });
+
+  console.log(sectors);
+  return sectors;
 }
 
-findFIR(-1.27399, 52.59789); // Leicester (C)
-findFIR(-2.150482, 48.510613); // Je Mapelle Suise (Not in LON)
+module.exports = {
+  findFIR,
+};
+
+findFIR(52.59789, -1.27399);
+// findFIR(-1.27399, 52.59789); // Leicester (C)
+findFIR(48.510613, -2.150482); // Je Mapelle Suise (Not in LON)
 findFIR(51.434838, -2.603396); // Bristol (W)
