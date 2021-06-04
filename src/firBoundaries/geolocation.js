@@ -31,7 +31,7 @@ function findFIR(lat, long) {
     const acInFIR = turf.booleanPointInPolygon(point, poly);
 
     if (acInFIR) {
-      sectors.push(`${sectorName}`);
+      sectors.push(sectorName);
     }
 
     console.log(`${sectorName}: ${acInFIR}`);
@@ -44,8 +44,3 @@ function findFIR(lat, long) {
 module.exports = {
   findFIR,
 };
-
-findFIR(52.59789, -1.27399);
-// findFIR(-1.27399, 52.59789); // Leicester (C)
-findFIR(48.510613, -2.150482); // Je Mapelle Suise (Not in LON)
-findFIR(51.434838, -2.603396); // Bristol (W)
