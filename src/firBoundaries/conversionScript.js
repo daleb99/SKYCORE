@@ -1,4 +1,3 @@
-/* eslint-disable prefer-destructuring */
 const fs = require('fs');
 
 const geoJSONTemplate = {
