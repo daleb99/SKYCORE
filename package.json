@@ -15,10 +15,7 @@
     "eslint-plugin-import": "^2.23.3"
   },
   "dependencies": {
-<<<<<<< HEAD
     "axios": "^0.21.1",
-=======
->>>>>>> 2a68e33857bf0273537aa11af5d2230596338c14
     "@turf/boolean-point-in-polygon": "^6.3.0",
     "@turf/turf": "^6.3.0",
     "cors": "^2.8.5",
