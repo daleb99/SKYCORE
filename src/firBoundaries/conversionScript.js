@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 const fs = require('fs');
 
 const geoJSONTemplate = {
@@ -54,5 +55,3 @@ function convertFile(file) {
 }
 
 convertFile({ path: `${__dirname}/plainText/UKSF LON.txt`, name: 'UKSF LON.txt' });
-// getFiles().forEach((file) => {
-// });
