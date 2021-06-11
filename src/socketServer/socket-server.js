@@ -10,6 +10,10 @@ const createSocketServer = ((server) => {
       console.log('Device disonnected');
     }));
   }));
+
+  io.sockets.on('attempt-connect', ((socket) => {
+    console.log('Someone tried to connect');
+  }));
 });
 
 module.exports = {
